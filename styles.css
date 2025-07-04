@@ -1,0 +1,100 @@
+/* Body stuff */
+html, body {
+    background-color: #141414;
+    margin: 0;
+    scrollbar-width: none;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#nav {
+    position: fixed;
+    z-index: 1000;
+    border-radius: 10px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 114px;
+    max-width: 130px;
+    height: 37.8px;
+    max-height: 50px;
+    background-color: #222222;
+    box-shadow: 0px 0px 50px -5px rgba(0,0,0,0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#nav img {
+    /* margin-left: 20px; */
+    width: 87.8px;
+}
+
+/* Drag and drop area + file styling code */
+#container {
+    width: 100vw; 
+    height: 100vh; 
+    position: relative;
+}
+
+#drop-zone {
+    width: 9600px; /* Scaled up 5x */
+    height: 5400px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    overflow: hidden;
+
+    /* Grid Layout */
+    background-color: #141414;
+    background-image: linear-gradient(#292a30 1px, transparent 1px), 
+                      linear-gradient(90deg, #292a30 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0; /* Important: lock it to the top-left */
+    image-rendering: pixelated;
+    transform-origin: 0 0;
+}
+  
+.file-wrapper {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    user-select: none;
+    position: absolute;
+    transition: box-shadow 0.2s ease;
+}
+
+.file-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.file-wrapper.selected {
+    outline: 1px dashed white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.file-wrapper.selected .resize-handle {
+    display: block;
+}
+
+.resize-handle {
+    display: none;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    bottom: 4px;
+    right: 4px;
+    cursor: nwse-resize;
+    border-radius: 20px;
+    z-index: 2;
+}
