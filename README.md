@@ -2,6 +2,10 @@
 
 **FileGrid** is a visual file management system that lets you drag and drop files onto a spatial canvas, where they can be freely organized, previewed, and zoomed in/out. It's built for users who want a more intuitive, visual way of managing files—kind of like a digital whiteboard for your documents.
 
+You can check it out @ https://filegrid.web.app/
+
+*Can only be controlled via trackpad, additional usability updates coming soon!
+
 ---
 
 ## 🔧 Features
